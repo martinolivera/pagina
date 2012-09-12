@@ -8,14 +8,19 @@ plugins:
     - hyde.ext.plugins.textlinks.TextlinksPlugin
 context:
     data:
-        site_title: Site Name
+        site_title: tic@inaes
         author:
-            name: Your Name Here
-            url: "http://example.com"
+            name: Niv Sardi
+            url: "http://tic.inaes.gob.ar"
         google_analytics_id: UA-XXXXX-YY
         home_url: index.html
         menu:
             - title: Home
               url: index.html
-            - title: Landing
-              url: landing.html
+            - title: Promoción
+              url: promote.html
+            - title: Asesoría
+              url: consulting.html
+            - title: Código
+              url: code.html
+
