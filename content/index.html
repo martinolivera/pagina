@@ -1,36 +1,40 @@
 ---
 title: ¡ Bienvenido !
 description: comisión de cooperativas tecnológicas del INAES
+next: ¿ Quienes Somos ?
 ---
 
 {% extends "topbar.j2" %}
-
-
-{% block css %}
-<style type="text/css">
-  body {
-    padding-top: 60px;
-  }
-</style>
-{% endblock css %}
 
 {#
     You can put the HTML in the "content" folder but it's not recommended. The aim of Hyde is to abstract the
     presentation layer. So this is more of an example of what not to do. I just didn't want to clutter the layouts
     folder any more.
  #}
-{% block content %}
+{% block jumbotron %}
   <!-- Example row of columns -->
 <!-- Main hero unit for a primary marketing message or call to action -->
-  <div class="hero-unit">
-    <h1>¡ Bienvenido !</h1>
-    <p>
-      llegastes a la página de la Comisión de Cooperativas Tecnológicas del INAES.
-    </p>
-    <p><a class="btn primary large" href="#who">¿ Quienes Somos ? &raquo;</a></p>
+  <div class="jumbotron masthead">
+    <div class="container">
+      <h1><a href="#">tic</a>.<a href="http://inaes.gob.ar">inaes</a>.<a href="#">gob</a>.<a href="#">ar</a></h1>
+      <p>
+        Comisión de Cooperativas Tecnológicas
+      </p>
+      <p><a class="btn btn-primary btn-large" href="#who">¿ Quienes Somos ? &raquo;</a></p>
+      <ul class="masthead-links">
+        <li>
+          <a href="http://github.com/tic-inaes">GitHub</a>
+        </li>
+        <li>
+          <a href="http://desarrollo.gob.ar">Ministerio de Desarrollo Social</a>
+        </li>
+    </div>
   </div>
-  <div class="row" id="who">
-    <div class="span-one-third">
+{% endblock jumbotron %}
+
+  {% block content %}
+  <div class="row-fluid" id="who">
+    <div class="span4">
       <h2>Promoción</h2>
       <p><b>Otra Tecnología</b><p>
       <p>
@@ -41,19 +45,19 @@ description: comisión de cooperativas tecnológicas del INAES
       </p>
       <p><a class="btn" href="#promotion">Detalles &raquo;</a></p>
     </div>
-    <div class="span-one-third">
+    <div class="span4">
       <h2>Asesoría</h2>
       <p><b>Especialistas a tu disposición</b></p>
-       <p>
-         Reforzando la presencia del Estado en el desarrollo tecnológico de
-         la nación, nuestro equipo ofrece a proyectos seleccionados,
-         servicios de asesoría técnica. Para construir juntos un sector
+      <p>
+        Reforzando la presencia del Estado en el desarrollo tecnológico de
+        la nación, nuestro equipo ofrece a proyectos seleccionados,
+        servicios de asesoría técnica. Para construir juntos un sector
          cooperativo moderno, integrado y unido.
-       </p>
+      </p>
 
       <p><a class="btn" href="#">Detalles &raquo;</a></p>
-   </div>
-    <div class="span-one-third">
+    </div>
+    <div class="span4">
       <h2>Código</h2>
       <p><b>La palabra es barata…</b></p>
       <p>
@@ -61,7 +65,8 @@ description: comisión de cooperativas tecnológicas del INAES
         para todos, por ende nuestros desarrollos se publican en
         <a href="http://es.wikipedia.org/wiki/Software_Libre">Software Libre</a>,
         forkealos, parchealos, y mandanos tus modificaciones. En realidad,
-        hasta esta página está <a href="http://github.com/inaes-tic/pagina">publicada</a>.
+        <a href="http://github.com/inaes-tic/pagina"> esta página
+          también</a>.
       <p><a class="btn" href="#">Detalles &raquo;</a></p>
     </div>
   </div>

@@ -6,6 +6,25 @@ plugins:
     - hyde.ext.plugins.auto_extend.AutoExtendPlugin
     - hyde.ext.plugins.syntext.SyntextPlugin
     - hyde.ext.plugins.textlinks.TextlinksPlugin
+    - hyde.ext.plugins.blockdown.BlockdownPlugin
+    - hyde.ext.plugins.less.LessCSSPlugin
+meta:
+#    extends: topbar.j2
+    default_block: doc
+    nodemeta: meta.yaml
+    toc: root
+    index: -1
+    charset: utf-8
+    compatibility: 'IE=edge,chrome=1'
+    viewport: 'width=device-width, initial-scale=1.0'
+    description: >
+        El futuro tecnologico de la nación
+        se construye con economia social
+    title: tic@inaes — Comisión de Cooperativas Tecnólogicas
+    keywords: >
+                inaes,tic,cooperativas,floss
+    author: Niv Sardi
+
 context:
     data:
         site_title: tic@inaes
@@ -23,4 +42,4 @@ context:
               url: consulting.html
             - title: Código
               url: code.html
-
+    charset: utf-8
