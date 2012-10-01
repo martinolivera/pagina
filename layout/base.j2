@@ -53,18 +53,29 @@
         {% block content %}
         {% endblock %}
       </div>
-
-      <footer>
-        {% block footer %}
-        <p>Hecho con Software Libre
-          <a href="http://github.com/hyde/hyde">Hyde</a> & 
-          <a href="http://twitter.github.com/bootstrap">Bootstrap</a> 
-        </p>
-        {% endblock footer %}
-      </footer>
-
       {% endblock container %}
-    </div> <!-- /container -->
+    </div>
+    <footer class="footer">
+      {% block footer %}
+      <div class="container" id="bottom">
+        <p class="pull-right"><a href="#">↑</a></p>
+        <p>Hecho con Software Libre
+          <a href="http://github.com/hyde/hyde">Hyde</a> & <a href="http://twitter.github.com/bootstrap">Bootstrap</a>.
+        </p>
+
+        <p>Código bajo licencia
+          <a href="http://www.apache.org/licenses/LICENSE-2.0"
+             target="_blank">Licencia Apache  v2.0</a>.
+        </p>
+
+        <ul class="footer-links">
+          <li><a href="https://github.com/inaes-tic/pagina/issues?state=open">Reportar
+          Problemas</a></li>
+        </ul>
+
+        {% endblock footer %}
+      </div> <!-- /container -->
+    </footer>
 
     {% endblock body %}
 
