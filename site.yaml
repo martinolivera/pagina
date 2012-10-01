@@ -9,7 +9,7 @@ plugins:
     - hyde.ext.plugins.blockdown.BlockdownPlugin
     - hyde.ext.plugins.less.LessCSSPlugin
 meta:
-#    extends: topbar.j2
+    extends: columns.j2
     default_block: doc
     nodemeta: meta.yaml
     toc: root
@@ -37,7 +37,7 @@ context:
             - title: Home
               url: index.html
             - title: Promoción
-              url: promote.html
+              url: promo.html
             - title: Asesoría
               url: consulting.html
             - title: Código
