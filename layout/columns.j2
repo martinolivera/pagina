@@ -7,6 +7,7 @@
 <link href="{{ media_url('css/columns.css') }}" rel="stylesheet">
 {% endblock basecss %}
 
+
 {% block content %}
 
 <div class="page-header">
@@ -19,13 +20,10 @@
 </div>
 
 <div class="row">
-  <div class="span10">
+  <div class="span8">
       {% filter markdown -%}
       {% block main %}{% endblock %}
       {%- endfilter %}
-  </div>
-  <div class="span4">
-    {% block sidebar %}{% endblock %}
   </div>
 </div>
 
