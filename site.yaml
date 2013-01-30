@@ -42,6 +42,8 @@ context:
               url: consulting.html
             - title: Código
               url: code.html
+            - title: Trabajo
+              url: jobs.html
             - title: Contacto
               url: who.html
     charset: utf-8
