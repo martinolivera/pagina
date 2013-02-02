@@ -1,3 +1,6 @@
-[submodule "content/media/js/socialite"]
-	path = content/media/js/socialite
+[submodule "content/media/vendor/github-widget"]
+	path = content/media/vendor/github-widget
+	url = https://github.com/jawj/github-widget.git
+[submodule "content/media/vendor/socialite"]
+	path = content/media/vendor/socialite
 	url = https://github.com/dbushell/Socialite.git

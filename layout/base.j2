@@ -19,6 +19,7 @@
     <link href="{{ media_url('css/bootstrap-docs.css') }}" rel="stylesheet">
     <link href="{{ media_url('css/style.css') }}" rel="stylesheet">
     <link href="{{ media_url('css/pygments.css') }}" rel="stylesheet">
+    <link href="{{ media_url('vendor/github-widget/github-widget.css') }}" rel="stylesheet">
     <link href='http://fonts.googleapis.com/css?family=Francois+One' rel='stylesheet' type='text/css'>
     <link href='http://fonts.googleapis.com/css?family=Quicksand' rel='stylesheet' type='text/css'>
     <link href='https://fonts.googleapis.com/css?family=Cabin:400,700' rel='stylesheet' type='text/css'>
@@ -126,7 +127,7 @@
     <script src="{{ media_url('js/jquery.min.js') }}"></script>
     <script src="{{ media_url('js/bootstrap.min.js') }}"></script>
     <script src="{{ media_url('js/bootstrap-tab-bookmark.js') }}"></script>
-    <script src="{{ media_url('js/socialite/socialite.js') }}"></script>
+    <script src="{{ media_url('vendor/socialite/socialite.js') }}"></script>
     <script>$(Socialite.load);</script>
     {% endblock scripts %}
 
@@ -151,6 +152,6 @@
     {% if resource.meta.banner.text %}
     <div id="banner"><a href="{{ resource.meta.banner.link }}">{{ resource.meta.banner.text }}</a></div>
     {% endif %}
-
+    <script src="{{ media_url('vendor/github-widget/github-widget.min.js') }}"></script>
   </body>
 </html>
