@@ -1,5 +1,20 @@
+{% macro render_excerpt (res) %}       
+          {% refer to res.relative_deploy_path as post %}
+                    {{ post.excerpt|markdown|typogrify }}
+          <p><a class="btn" href="{{ content_url(res.url) }}">Detalles &raquo;</a></p>
+{% endmacro %}
+
 {% macro render_blog_listing(walker) %}
-<div>
+  {% for res in walker %}
+     <div class="span4">
+       <h2><a href="{{ content_url(res.url) }}">{{ res.meta.title }}</a></h2>        
+          <p><b>{{ res.meta.subtitle }}</b><p>
+       {{ render_excerpt (res) }}
+    </div>
+  {% endfor %}
+{% endmacro %}
+
+{% macro render_media_listing(walker) %}
   {% for res in walker %}
   <div class="media">
     <a href="{{content_url(res.url)}}" class="pull-left">
@@ -8,23 +23,14 @@
       {% endif %}
     </a>
     <div class="media-body">
-      <h4 class="media-heading"><strong><a href="{{ content_url(res.url) }}">{{ res.meta.title }}</a></strong></h4>
-      {% refer to res.relative_deploy_path as post %}
-      {{ post.excerpt|markdown|typogrify }}
-      <p><a class="btn" href="{{ content_url(res.url) }}">Read more</a></p>
-      <p>
-        <i class="icon-calendar"></i> {{ res.meta.created.strftime('%d %b %Y') }}
-        {% if res.meta.tags %}
-        | <i class="icon-tags"></i> Tags:
-        {% for tag in res.meta.tags %}
-        <a href="{{ content_url('blog/tags/'~tag~'.html') }}"><span class="label label-inverse">{{tag}}</span></a>
-        {% endfor %}
-        {% endif %}
-      </p>
+    <header>
+     <h4>{{ res.meta.title }}
+          <small>{{ res.meta.subtitle }}</small></h4>
+     {{ render_excerpt (res) }}
+    </header>
     </div>
   </div>
   {% endfor %}
-</div>
 {% endmacro %}
 
 {% macro render_xml_blog_listing(walker) %}

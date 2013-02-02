@@ -6,6 +6,10 @@
 <header class="page-header">
   {% block header %}
   <h1>
+  {% if resource.meta.image %}
+  <img class="thumbnail" src="{{ resource.meta.image }}">  
+  {% endif %}
+
     {% block page_title %}{{ resource.meta.title }}{% endblock %}
     <small>
     {% block page_subtitle %}

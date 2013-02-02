@@ -1,0 +1,23 @@
+---
+title: Asesoría
+subtitle: Especialistas a tu disposición
+---
+
+## los secretos de las grandes corporaciones, al servicio de todos
+
+{% mark excerpt %}
+Reforzando la presencia del Estado en el desarrollo tecnológico de
+la Nación, [nuestro equipo](/who.html) ofrece a proyectos seleccionados,
+servicios de asesoría técnica para construir juntos una economia solidaria, moderna, innovadora y de excelencia tecnica
+{% endmark %}
+
+Los proyecotos se seleccionan por su complejidad tecnológica, su capacidad
+de crecimiento, la cantidad de entes involucrados (cuanto mas mejor) y la
+proyección de re-uso tecnologico associada.
+
+## Casos de éxito
+
+{% from "macros.j2" import render_media_listing with context %}
+<div class="row-fluid" id="marketing">
+{{ render_media_listing(resource.node.walk_resources_sorted_by_name()[1:]) }}
+</div>

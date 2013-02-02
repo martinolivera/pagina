@@ -1,6 +1,10 @@
 mode: development # Use "hyde publish -c prod.yaml to have this automatically switch to production
+base_url: /
+simple_copy:
+  - media/*
 media_root: media # Relative path from content folder.
 media_url: /media # URL where the media files are served from.
+
 plugins:
     - hyde.ext.plugins.meta.MetaPlugin
     - hyde.ext.plugins.auto_extend.AutoExtendPlugin
@@ -8,10 +12,44 @@ plugins:
     - hyde.ext.plugins.textlinks.TextlinksPlugin
     - hyde.ext.plugins.blockdown.BlockdownPlugin
     - hyde.ext.plugins.less.LessCSSPlugin
+    - hyde.ext.plugins.urls.UrlCleanerPlugin
+    - hyde.ext.plugins.sorter.SorterPlugin
+    - hyde.ext.plugins.tagger.TaggerPlugin
+
+syntax:
+  use_figure: False
+
+sorter:
+  name:
+    attr: name
+    filters:
+      source_file.kind: html
+      is_processable: True
+  time:
+     attr: meta.created
+     reverse: True
+     filters:
+       source_file.kind: html
+       is_processable: True
+tagger:
+  sorter: time
+  archives:
+    atom:
+      source: /
+      target: /tags
+      template: tag.xml.j2
+      extension: xml
+
+urlcleaner:
+  index_file_names:
+    - index.html
+  strip_extensions:
+    - html
+
 meta:
-    extends: columns.j2
-    default_block: doc
+    default_block: main
     nodemeta: meta.yaml
+    extends: markdown.j2
     toc: root
     index: -1
     charset: utf-8
@@ -20,17 +58,22 @@ meta:
     description: >
         El futuro tecnologico de la nación
         se construye con economia social
-    title: tic@inaes — Comisión de Cooperativas Tecnólogicas
     keywords: >
                 inaes,tic,cooperativas,floss
-    author: Niv Sardi
+    banner:
+      text: ¡ Reclutamos !
+      link: /jobs.html
 
 context:
     data:
+        site_url: http://tic.inaes.gob.ar
         site_title: tic@inaes
         author:
             name: Niv Sardi
             url: "http://tic.inaes.gob.ar"
+            sources: "http://github.com/inaes-tic/pagina"
+        twitter:
+            handle: inaestic
         google_analytics_id: UA-XXXXX-YY
         home_url: index.html
         menu:
